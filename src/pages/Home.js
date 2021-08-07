@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Box, Typography } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import { RadioButtons, Carousel, Chart } from "../components/";
 
 const useStyles = makeStyles({
