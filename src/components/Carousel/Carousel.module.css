@@ -1,0 +1,14 @@
+.carouselWrap {
+  display: flex;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.cardItem {
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.selectedItem {
+  border-color: blue;
+}
