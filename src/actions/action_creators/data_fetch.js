@@ -1,4 +1,9 @@
-import { FETCH_FROM_API, TOGGLE_TEMPERATURE } from "../action_type/data_fetch";
+import {
+  FETCH_FROM_API,
+  TOGGLE_TEMPERATURE,
+  TRIGGER_ERROR,
+} from "../action_type/data_fetch";
+
 //import data from "../../mockData";
 
 const axios = require("axios");
@@ -34,7 +39,13 @@ const getWeatherData = () => {
           payload: { data: { city: data.city, list: splitToDate } },
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.error("Error-->", err);
+        dispatch({
+          type: TRIGGER_ERROR,
+          payload: true,
+        });
+      });
   };
 };
 
@@ -74,4 +85,13 @@ const toggleTemp = (temperature) => {
   };
 };
 
-export { getWeatherData, toggleTemp };
+const triggerError = () => {
+  return (dispatch) => {
+    dispatch({
+      type: TRIGGER_ERROR,
+      payload: true,
+    });
+  };
+};
+
+export { getWeatherData, toggleTemp, triggerError };
