@@ -12,7 +12,7 @@ const getWeatherData = () => {
   return (dispatch) => {
     axios
       .get(
-        "https://api.openweathermap.org/data/2.5/forecast?id=524901&appid=c714f87ec1e66ee0a71a17880ac6fc19"
+        `https://api.openweathermap.org/data/2.5/forecast?id=${process.env.REACT_APP_API_KEY_WEATHER}`
       )
       .then(({ data }) => {
         let splitToDate = {};
