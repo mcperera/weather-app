@@ -10,6 +10,7 @@ import {
   RadioGroup,
   FormControlLabel,
   IconButton,
+  Tooltip,
 } from "@material-ui/core";
 import RefreshIcon from "@material-ui/icons/Refresh";
 
@@ -46,9 +47,14 @@ function RadioButtons() {
           label="Fahrenheit"
         />
       </RadioGroup>
-      <IconButton aria-label="refresh" component="span" onClick={handleRefresh}>
-        <RefreshIcon />
-      </IconButton>
+      <Tooltip title="Refresh">
+        <IconButton
+          aria-label="refresh"
+          component="span"
+          onClick={handleRefresh}>
+          <RefreshIcon />
+        </IconButton>
+      </Tooltip>
     </Box>
   );
 }
